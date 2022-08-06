@@ -15,16 +15,35 @@ function handleComplete(){
 }
 function handleDelete(){
     console.log('delete clicked');
+    const id = $(this).closest('tr').data('id');
+    console.log(id);
+
+    $.ajax({
+        method: 'DELETE',
+        url: `/todo/${id}`
+    }).then(function (response){
+        console.log(response);
+        getTasks();
+    }).catch(function(err){
+        console.log(err);
+        alert('error in delete');
+    })
+
 }
 function renderDisplay(object){
     console.log('in render display');
+    //empty dom
+    el = $('#tasks');
+    el.empty();
     //for loop to go through array of objects
     for (let i=0; i < object.length; i++){
-        $('.task-row').append(`
-            <td>${object[i].task}</td>
-            <td>${object[i].complete}</td>
-            <td><button id="completeBtn">Complete</button></td>
-            <td><button id="deleteBtn">Delete</button></td>
+        $('#tasks').append(`
+            <tr data-id="${object[i].id}">    
+                <td>${object[i].task}</td>
+                <td>${object[i].complete}</td>
+                <td><button id="completeBtn">Complete</button></td>
+                <td><button id="deleteBtn">Delete</button></td>
+            </tr>
         `)
     }
 }

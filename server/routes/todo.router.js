@@ -18,4 +18,20 @@ todoRouter.get('/', (req,res)=>{
         });
 })//end of GET
 
+//DELETE
+todoRouter.delete('/:id', (req, res) => {
+    const id = req.params.id;
+    const queryText = `
+    DELETE FROM "task-list"
+    WHERE "id" = $1;
+    `
+    pool.query(queryText, [id])
+        .then(result =>{
+            res.sendStatus(204);
+        }).catch(err=> {
+            console.log(err);
+            res.sendStatus(500);
+        })
+})
+
 module.exports = todoRouter; //what is this line doing
