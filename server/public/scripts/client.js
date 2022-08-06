@@ -6,8 +6,16 @@ function handleReady(){
     console.log('jq in the house');
     getTasks();
     //click listeners
+    $('#tasks').on('click','#completeBtn', handleComplete);
+    $('#tasks').on('click','#deleteBtn', handleDelete);
 }
 
+function handleComplete(){
+    console.log('complete clicked');
+}
+function handleDelete(){
+    console.log('delete clicked');
+}
 function renderDisplay(object){
     console.log('in render display');
     //for loop to go through array of objects
@@ -15,6 +23,8 @@ function renderDisplay(object){
         $('.task-row').append(`
             <td>${object[i].task}</td>
             <td>${object[i].complete}</td>
+            <td><button id="completeBtn">Complete</button></td>
+            <td><button id="deleteBtn">Delete</button></td>
         `)
     }
 }
