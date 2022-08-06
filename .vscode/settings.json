@@ -1,0 +1,346 @@
+{
+    "textmarker.savedHighlights": [
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "tracks an inventory on the server",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "lightpink"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "to view items in the inventory",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "lightgreen"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "add items to the inventory",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "mediumSlateBlue"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "search for items by name",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "plum"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "Inventory items will be objects that are held in a server side array.",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "yellow"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "The logic for the calculator **must** be implemented on the server. ",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "tan"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "user can input two values (2 input elements)",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "pink"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "select type of mathematical operation",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "darkturquoise"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "submit (`=` button)",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "darkgray"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "capture this input",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "darkkhaki"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "bundle it up in an object",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "darkorange"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "send this object to the server via a POST",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "darksalmon"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "be a 'C' button",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "darkseagreen"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "Addition, Subtraction, Multiplication, and Division.",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "gray"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "Once the calculation is complete, send back the OK",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "green"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": " a GET request after the POST to get the actual calculation",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "yellow"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "Keep a historical record of all math operations and solutions on the server.",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "gray"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "Display a list of all previous calculations on the page when it loads using a GET request",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "lightpurple"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "Update the list when a new calculation is made.",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "limegreen"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "Display a list of all previous calculations on the page when it loads using a GET request.",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "orchid"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "// Require express - gives us a function\nconst express = require('express');\n\n// Create an instance of express by calling the function returned above - gives us an object\nconst app = express();\nconst port = 5000;\n\n// express static file serving - public is the folder name\napp.use(express.static('server/public'));\n\n// Start up our server\napp.listen(port, () => {\n  console.log('listening on port', port);\n});\n\n//You need this line of code otherwise your req.body\n//will be undefined. \napp.use(express.urlencoded({extended : true}));",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "lightgreen"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "//POST '/calculator route",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "darkgreen"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "//Functions",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "navy"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": " // else{\n    //     answer = 0;\n    // }//end of other check",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "pink"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "Create a front end experience that allows a user to create a Task",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "orchid"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "When the Task is created, it should be stored inside of a database (SQL)",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "orchid"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "Whenever a Task is created the front end should refresh to show all tasks that need to be completed.",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "orchid"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "Each Task should have an option to 'Complete' or 'Delete'",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "orchid"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "its visual representation should change on the front end",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "orchid"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "The complete option should be  'checked off'",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "orchid"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "Whether or not a Task is complete should also be stored in the database",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "orchid"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "Deleting a Task should remove it both from the front end as well as the Database",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "orchid"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "weekend-to-do-app",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "orchid"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "database.sql",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "orchid"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "-  Responsive -- make your app responsive to different screen sizes -- check out the [Layout](https://getbootstrap.com/docs/4.1/layout/overview/) section",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "orchid"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "- [ ]  In whatever fashion you would like, create an 'are you sure: yes / no' option when deleting a task.",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "orchid"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": " - [ ]  Research [Query Params](https://expressjs.com/en/api.html#req.query) to have the request reverse the order of the returned todos. ",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "orchid"
+        },
+        {
+            "pattern": {
+                "type": "string",
+                "expression": "\n    - [ ]  Add the ability to record when a task was completed. Show the completed date on the frontend in a pretty format.",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "orchid"
+        }
+    ]
+}
