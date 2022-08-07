@@ -65,10 +65,6 @@ todoRouter.put('/:id', (req,res)=>{
     THEN false ELSE true END
     WHERE "id" = $1;
     `
-
-    // UPDATE "task-list" 
-    // SET "complete" = true
-    // WHERE "id" = $1;
     pool.query(queryText, [id])
         .then(result=>{
             res.sendStatus(200);

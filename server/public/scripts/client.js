@@ -13,6 +13,20 @@ function handleReady(){
     $('#addBtn').on('click', handleAdd);
 }
 
+function markComplete(objectArray){
+    //loop through the array
+    for(let i =0; i<objectArray.length; i++){
+         //check to see if complete is true
+         if(objectArray[i].complete === true){
+            console.log('it is true');
+            //$(this).closest('.row').addClass("done");
+            // $(this).closest('.box').addClass("yellowBackground");
+         } else if (objectArray[i].complete === false){
+            console.log('it is false');
+         }
+    }
+}
+
 function handleAdd(){
     console.log('add');
     if($('#newTaskIn').val() !== ''){
@@ -67,14 +81,16 @@ function handleDelete(){
 function renderDisplay(object){
     console.log('in render display');
     //empty dom
-    el = $('#tasks');
+    let el = $('#tasks');
     el.empty();
+
     //for loop to go through array of objects
     for (let i=0; i < object.length; i++){
+    
         $('#tasks').append(`
-            <tr data-id="${object[i].id}">    
+            <tr class="row" data-id="${object[i].id}">    
                 <td>${object[i].task}</td>
-                <td>${object[i].complete}</td>
+                <td class="done">${object[i].complete}</td>
                 <td><button id="completeBtn">Complete</button></td>
                 <td><button id="deleteBtn">Delete</button></td>
             </tr>
@@ -91,6 +107,8 @@ function getTasks(){
         url: '/todo/'
     }).then(function (response){
         console.log('here are the tasks', response);
+        //markComplete function
+        markComplete(response);
         //renderToDom function
         renderDisplay(response);
     })
