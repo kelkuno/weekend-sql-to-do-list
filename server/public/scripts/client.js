@@ -13,19 +13,6 @@ function handleReady(){
     $('#addBtn').on('click', handleAdd);
 }
 
-function markComplete(objectArray){
-    //loop through the array
-    for(let i =0; i<objectArray.length; i++){
-         //check to see if complete is true
-         if(objectArray[i].complete === true){
-            console.log('it is true');
-            //$(this).closest('.row').addClass("done");
-            // $(this).closest('.box').addClass("yellowBackground");
-         } else if (objectArray[i].complete === false){
-            console.log('it is false');
-         }
-    }
-}
 
 function handleAdd(){
     console.log('add');
@@ -86,8 +73,8 @@ function renderDisplay(object){
 
     //for loop to go through array of objects
     for (let i=0; i < object.length; i++){
-    
-        $('#tasks').append(`
+        if(object[i].complete === true){
+            $('#tasks').append(`
             <tr class="row" data-id="${object[i].id}">    
                 <td>${object[i].task}</td>
                 <td class="done">${object[i].complete}</td>
@@ -95,8 +82,18 @@ function renderDisplay(object){
                 <td><button id="deleteBtn">Delete</button></td>
             </tr>
         `)
-    }
-}
+        }else if(object[i].complete === false){
+            $('#tasks').append(`
+            <tr class="row" data-id="${object[i].id}">    
+                <td>${object[i].task}</td>
+                <td>${object[i].complete}</td>
+                <td><button id="completeBtn">Complete</button></td>
+                <td><button id="deleteBtn">Delete</button></td>
+            </tr>
+        `)
+        }
+    }//end of for loop
+}//end of renderDisplay function
 
 //GET
 //get tasks from server
@@ -107,8 +104,6 @@ function getTasks(){
         url: '/todo/'
     }).then(function (response){
         console.log('here are the tasks', response);
-        //markComplete function
-        markComplete(response);
         //renderToDom function
         renderDisplay(response);
     })
