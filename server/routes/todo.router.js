@@ -2,7 +2,6 @@ const express = require('express');
 const todoRouter = express.Router();
 const pool = require('../modules/pool.js');
 
-//GET
 todoRouter.get('/', (req,res)=>{
     console.log('GET request for tasks');
     let queryText = `
@@ -19,7 +18,6 @@ todoRouter.get('/', (req,res)=>{
         });
 })//end of GET
 
-//POST
 todoRouter.post('/', (req,res) =>{
     let queryText = `
     INSERT INTO "task-list"("task","complete")
@@ -39,7 +37,6 @@ todoRouter.post('/', (req,res) =>{
         })
 })
 
-//DELETE
 todoRouter.delete('/:id', (req, res) => {
     const id = req.params.id;
     const queryText = `
@@ -55,7 +52,6 @@ todoRouter.delete('/:id', (req, res) => {
         })
 })
 
-//PUT
 todoRouter.put('/:id', (req,res)=>{
     const id=req.params.id;
     let queryText=`
@@ -74,4 +70,4 @@ todoRouter.put('/:id', (req,res)=>{
         })
 })
 
-module.exports = todoRouter; //what is this line doing
+module.exports = todoRouter; 

@@ -1,7 +1,3 @@
-.done {
-    text-decoration: line-through;
-}
-
 body{
     font-family: 'Roboto', sans-serif;
     background-color:MistyRose;
@@ -11,26 +7,44 @@ h1{
     font-family: 'Caveat', cursive;
     font-weight: 700;
 }
+input {
+    border: 2px solid tomato;
+    border-radius: 4px;
+    background: mistyrose;
+    width: 75%;
+    font-family: 'Caveat', cursive;
+    font-weight: 400;
+    color: tomato;
+  }
+button {
+    margin: 1em;
+    border-radius: 4px;
+    background: tomato;
+    border: 2px solid tomato;
+    color: mistyRose;
+}
+main{
+    padding: 2em;
+}
+table {
+    text-align: center;
+    width: 100%;
+}
+.done {
+    text-decoration: line-through;
+}
 .task{
     font-family: 'Caveat', cursive;
     font-weight: 400;
+}
+.complete-marked{
+    background: mistyRose;
+    border: 2px solid tomato;
+    color: tomato;
 }
 .wrapper {
     background-color: MistyRose;
     border-radius: 25px;
     border: 2px solid Tomato;
     text-align: center;
-}
-main{
-    border: solid 2px blue;
-    padding: 2em;
-
-}
-table {
-    text-align: center;
-    border: solid 2px black;
-    width: 100%;
-}
-section{
-    border: solid 2px white;
 }

@@ -13,7 +13,6 @@ function handleReady(){
     $('#addBtn').on('click', handleAdd);
 }
 
-
 function handleAdd(){
     console.log('add');
     if($('#newTaskIn').val() !== ''){
@@ -48,6 +47,7 @@ function handleComplete(){
         alert('update failed');
     })
 }
+
 function handleDelete(){
     console.log('delete clicked');
     const id = $(this).closest('tr').data('id');
@@ -63,8 +63,8 @@ function handleDelete(){
         console.log(err);
         alert('error in delete');
     })
-
 }
+
 function renderDisplay(object){
     console.log('in render display');
     //empty dom
@@ -77,8 +77,7 @@ function renderDisplay(object){
             $('#tasks').append(`
             <tr class="row" data-id="${object[i].id}">    
                 <td class="done task">${object[i].task}</td>
-                <td>${object[i].complete}</td>
-                <td><button id="completeBtn">Complete</button></td>
+                <td><button class="complete-marked" id="completeBtn"><i>Finished</i></button></td>
                 <td><button id="deleteBtn">Delete</button></td>
             </tr>
         `)
@@ -86,7 +85,6 @@ function renderDisplay(object){
             $('#tasks').append(`
             <tr class="row" data-id="${object[i].id}">    
                 <td class="task">${object[i].task}</td>
-                <td>${object[i].complete}</td>
                 <td><button id="completeBtn">Complete</button></td>
                 <td><button id="deleteBtn">Delete</button></td>
             </tr>
@@ -95,8 +93,6 @@ function renderDisplay(object){
     }//end of for loop
 }//end of renderDisplay function
 
-//GET
-//get tasks from server
 function getTasks(){
     console.log('in get tasks');
     $.ajax({
@@ -108,9 +104,3 @@ function getTasks(){
         renderDisplay(response);
     })
 }
-
-//POST
-
-//PUT
-
-//DELETE

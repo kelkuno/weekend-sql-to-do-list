@@ -5,8 +5,8 @@ const pool = new Pool({
     database: 'todo_database', // THIS CAN AND WILL CHANGE
     host: 'localhost',
     port: 5432,
-    // max: 10,
-    // idleTimeoutMillis: 30000
+    max: 10,
+    idleTimeoutMillis: 30000
 });
 
 module.exports = pool;
