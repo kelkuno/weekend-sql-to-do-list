@@ -76,8 +76,8 @@ function renderDisplay(object){
         if(object[i].complete === true){
             $('#tasks').append(`
             <tr class="row" data-id="${object[i].id}">    
-                <td>${object[i].task}</td>
-                <td class="done">${object[i].complete}</td>
+                <td class="done task">${object[i].task}</td>
+                <td>${object[i].complete}</td>
                 <td><button id="completeBtn">Complete</button></td>
                 <td><button id="deleteBtn">Delete</button></td>
             </tr>
@@ -85,7 +85,7 @@ function renderDisplay(object){
         }else if(object[i].complete === false){
             $('#tasks').append(`
             <tr class="row" data-id="${object[i].id}">    
-                <td>${object[i].task}</td>
+                <td class="task">${object[i].task}</td>
                 <td>${object[i].complete}</td>
                 <td><button id="completeBtn">Complete</button></td>
                 <td><button id="deleteBtn">Delete</button></td>

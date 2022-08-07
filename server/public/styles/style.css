@@ -1,6 +1,36 @@
 .done {
-    background-color: green;
+    text-decoration: line-through;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color:MistyRose;
+    color: Tomato;
 }
 h1{
-    color: green;
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+}
+.task{
+    font-family: 'Caveat', cursive;
+    font-weight: 400;
+}
+.wrapper {
+    background-color: MistyRose;
+    border-radius: 25px;
+    border: 2px solid Tomato;
+    text-align: center;
+}
+main{
+    border: solid 2px blue;
+    padding: 2em;
+
+}
+table {
+    text-align: center;
+    border: solid 2px black;
+    width: 100%;
+}
+section{
+    border: solid 2px white;
 }
