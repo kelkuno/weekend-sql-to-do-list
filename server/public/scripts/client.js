@@ -15,22 +15,37 @@ function handleReady(){
 
 function handleAdd(){
     console.log('add');
-    let newTaskObject = {
-        task: $('#newTaskIn').val(),
-        complete: false
-    }
-    $.ajax({
-        type: 'POST',
-        url: '/todo/',
-        data: newTaskObject
-    }).then(function(response){
-        $('#newTaskIn').val('');
-        getTasks();
-    })
+    if($('#newTaskIn').val() !== ''){
+        let newTaskObject = {
+            task: $('#newTaskIn').val(),
+            complete: false
+        }
+        $.ajax({
+            type: 'POST',
+            url: '/todo/',
+            data: newTaskObject
+        }).then(function(response){
+            $('#newTaskIn').val('');
+            getTasks();
+        })
+    }   
 }
 
 function handleComplete(){
     console.log('complete clicked');
+    const id = $(this).closest('tr').data('id');
+    console.log(id);
+
+    $.ajax({
+        method: 'PUT',
+        url: `/todo/${id}`
+    }).then(function(response){
+        console.log(response);
+        getTasks();
+    }).catch(function(err){
+        console.log(err);
+        alert('update failed');
+    })
 }
 function handleDelete(){
     console.log('delete clicked');

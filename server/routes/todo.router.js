@@ -6,7 +6,8 @@ const pool = require('../modules/pool.js');
 todoRouter.get('/', (req,res)=>{
     console.log('GET request for tasks');
     let queryText = `
-    SELECT * FROM "task-list";
+    SELECT * FROM "task-list"
+    ORDER BY "id";
     `;
     pool.query(queryText)
         .then( (result) => {
@@ -49,6 +50,23 @@ todoRouter.delete('/:id', (req, res) => {
         .then(result =>{
             res.sendStatus(204);
         }).catch(err=> {
+            console.log(err);
+            res.sendStatus(500);
+        })
+})
+
+//PUT
+todoRouter.put('/:id', (req,res)=>{
+    const id=req.params.id;
+    let queryText=`
+    UPDATE "task-list" 
+    SET "complete" = true
+    WHERE "id" = $1;
+    `
+    pool.query(queryText, [id])
+        .then(result=>{
+            res.sendStatus(200);
+        }).catch(err =>{
             console.log(err);
             res.sendStatus(500);
         })
