@@ -1,3 +1,5 @@
+
+
 console.log('works');
 
 $(document).ready(handleReady);
@@ -8,6 +10,22 @@ function handleReady(){
     //click listeners
     $('#tasks').on('click','#completeBtn', handleComplete);
     $('#tasks').on('click','#deleteBtn', handleDelete);
+    $('#addBtn').on('click', handleAdd);
+}
+
+function handleAdd(){
+    console.log('add');
+    let newTaskObject = {
+        task: $('#newTaskIn').val()
+    }
+    $.ajax({
+        type: 'POST',
+        url: '/todo/',
+        data: newTaskObject
+    }).then(function(response){
+        $('#newTaskIn').val('');
+        getTasks();
+    })
 }
 
 function handleComplete(){

@@ -18,6 +18,25 @@ todoRouter.get('/', (req,res)=>{
         });
 })//end of GET
 
+//POST
+todoRouter.post('/', (req,res) =>{
+    let queryText = `
+    INSERT INTO "task-list"("task")
+    VALUES($1);
+    `
+    let queryValues = [
+        req.body.task
+    ]
+
+    pool.query(queryText, queryValues)
+        .then(results => {
+            res.sendStatus(201);
+        }).catch(err => {
+            console.log(err);
+            res.sendStatus(500);
+        })
+})
+
 //DELETE
 todoRouter.delete('/:id', (req, res) => {
     const id = req.params.id;
