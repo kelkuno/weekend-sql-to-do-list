@@ -21,11 +21,12 @@ todoRouter.get('/', (req,res)=>{
 //POST
 todoRouter.post('/', (req,res) =>{
     let queryText = `
-    INSERT INTO "task-list"("task")
-    VALUES($1);
+    INSERT INTO "task-list"("task","complete")
+    VALUES($1, $2);
     `
     let queryValues = [
-        req.body.task
+        req.body.task,
+        req.body.complete
     ]
 
     pool.query(queryText, queryValues)

@@ -16,7 +16,8 @@ function handleReady(){
 function handleAdd(){
     console.log('add');
     let newTaskObject = {
-        task: $('#newTaskIn').val()
+        task: $('#newTaskIn').val(),
+        complete: false
     }
     $.ajax({
         type: 'POST',
