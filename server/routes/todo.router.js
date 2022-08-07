@@ -59,10 +59,16 @@ todoRouter.delete('/:id', (req, res) => {
 todoRouter.put('/:id', (req,res)=>{
     const id=req.params.id;
     let queryText=`
-    UPDATE "task-list" 
-    SET "complete" = true
+    UPDATE "task-list"
+    SET "complete" = CASE 
+    WHEN "complete" = true
+    THEN false ELSE true END
     WHERE "id" = $1;
     `
+
+    // UPDATE "task-list" 
+    // SET "complete" = true
+    // WHERE "id" = $1;
     pool.query(queryText, [id])
         .then(result=>{
             res.sendStatus(200);

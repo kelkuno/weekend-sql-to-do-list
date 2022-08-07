@@ -6,3 +6,6 @@ CREATE TABLE "task-list"(
 
 INSERT INTO "task-list"("task", "complete")
 VALUES ('clean room', false),('make beans', false),('drink wine', true);
+
+UPDATE "task-list"
+SET "complete" = CASE WHEN "complete" = true THEN false else true END;
